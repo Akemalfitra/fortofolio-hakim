@@ -1,33 +1,36 @@
-/* ====================PENGATURAN AWAL DIMULAI==================== */
+/* ==================== PENGATURAN AWAL (GLOBAL STYLES) ==================== */
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
 
 :root {
-    --warna-utama: #a7a9be;
-    --warna-tajuk: #fffffe;
-    --warna-basis: #1f1d30;
-    --warna-basis2: #0f0e17;
-    --warna-merek: #a7a9be;
-    --warna-merek2: #fffffe;
-    --lebar-barsamping: 240px;
-    --tulisan: "Bai Jamjuree";
+    /* Warna */
+    --warna-utama: #a7a9be; /* Warna teks utama */
+    --warna-tajuk: #fffffe; /* Warna judul/heading */
+    --warna-basis: #1f1d30; /* Warna latar belakang dasar (kartu, navbar) */
+    --warna-basis2: #0f0e17; /* Warna latar belakang bodi */
+    --warna-merek: #a7a9be; /* Warna aksen/brand utama */
+    --warna-merek2: #fffffe; /* Warna aksen/brand sekunder (hover) */
+
+    /* Ukuran */
+    --lebar-barsamping: 240px; /* Lebar sidebar untuk desktop */
+
+    /* Font */
+    --tulisan: "Bai Jamjuree", sans-serif; /* Font utama, dengan fallback */
 }
 
+/* Pengaturan Dasar HTML */
 body {
     background-color: var(--warna-basis2);
     color: var(--warna-utama);
-    font-family: var(--tulisan), sans-serif;
+    font-family: var(--tulisan);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Gaya Heading */
+h1, h2, h3, h4, h5, h6 {
     color: var(--warna-tajuk);
     font-weight: 700;
 }
 
+/* Gaya Link Umum */
 a {
     text-decoration: none;
     color: var(--warna-utama);
@@ -38,18 +41,23 @@ a:hover {
     color: var(--warna-merek);
 }
 
+/* Gaya Gambar Umum */
 img {
-    width: 100%;
+    max-width: 100%; /* Memastikan gambar responsif */
+    height: auto; /* Memastikan rasio aspek terjaga */
 }
 
+/* Gaya Teks Merek (Highlight) */
 .teks_merek {
     color: var(--warna-merek);
 }
 
+/* Gaya Latar Belakang Basis */
 .basis-latar_belakang {
     background-color: var(--warna-basis);
 }
 
+/* Gaya Bagian (Section) */
 .ketinggian {
     min-height: 100vh;
     height: 100%;
@@ -58,9 +66,11 @@ img {
     justify-content: center;
     padding-top: 80px;
     padding-bottom: 80px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    /* Memberikan batas bawah antar section, tapi mungkin tidak perlu di section terakhir */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); 
 }
 
+/* Efek Bayangan pada Hover untuk Kartu/Review */
 .efek_bayangan {
     transition: all 0.5s;
 }
@@ -69,6 +79,7 @@ img {
     box-shadow: -6px 6px 0 0 var(--warna-merek);
 }
 
+/* Gaya Kotak Ikon */
 .kotak_ikon {
     width: 60px;
     height: 60px;
@@ -78,13 +89,16 @@ img {
     font-size: 32px;
     background-color: var(--warna-merek);
     color: var(--warna-basis);
+    border-radius: 4px; /* Sesuai dengan kelas Bootstrap 'rounded-4' */
 }
 
+/* Gaya Tombol Umum */
 .tombol {
     padding: 12px 28px;
     font-weight: 700;
 }
 
+/* Gaya Tombol Merek */
 .tombol_merek {
     background-color: var(--warna-merek);
     border-color: var(--warna-merek);
@@ -98,9 +112,11 @@ img {
     border-color: var(--warna-merek2);
 }
 
+/* Gaya Tautan dengan Underline Animasi */
 .tautan {
     font-weight: 700;
     position: relative;
+    display: inline-block; /* Penting agar pseudo-element bekerja */
 }
 
 .tautan::after {
@@ -110,7 +126,7 @@ img {
     background-color: var(--warna-merek2);
     position: absolute;
     left: 0;
-    top: 110%;
+    top: 110%; /* Posisi garis bawah */
     transition: all 0.4s;
 }
 
@@ -118,8 +134,9 @@ img {
     width: 100%;
 }
 
+/* Gaya Kartu Proyek */
 .kartu .gambar_kartu {
-    overflow: hidden;
+    overflow: hidden; /* Memastikan gambar tetap di dalam batas kartu */
 }
 
 .kartu .gambar_kartu img {
@@ -127,12 +144,13 @@ img {
 }
 
 .kartu:hover .gambar_kartu img {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Efek zoom saat hover */
 }
 
-/* ====================PENGATURAN AWAL DIAKHIRI==================== */
+/* ==================== PENGATURAN AWAL (GLOBAL STYLES) DIAKHIRI ==================== */
 
-/* ====================NAVIGASI BAR DIMULAI==================== */
+
+/* ==================== NAVIGASI BAR ==================== */
 .navigasi_bar {
     background-color: var(--warna-basis);
 }
@@ -140,7 +158,8 @@ img {
 .navigasi_bar .nav-link {
     font-weight: 700;
     text-transform: uppercase;
-    color: #fff;
+    color: #fff; /* Warna teks link navigasi */
+    padding: 10px 15px; /* Tambahkan sedikit padding untuk area klik */
 }
 
 .navigasi_bar .nav-link:hover {
@@ -150,10 +169,12 @@ img {
 .navigasi_bar .nav-link.active {
     color: var(--warna-merek);
 }
+/* ==================== NAVIGASI BAR DIAKHIRI ==================== */
 
-/* ====================NAVIGASI BAR DIMULAI==================== */
 
-/* ====================KEAHLIAN DIMULAI==================== */
+/* ==================== KEAHLIAN (SKILLS) ==================== */
+
+/* Wadah Progress Bar */
 .wadah_kemajuan {
     height: 10px;
     background-color: var(--warna-basis2);
@@ -162,124 +183,95 @@ img {
     margin-top: 10px;
 }
 
+/* Bar Progress */
 .bar_kemajuan {
     height: 100%;
-    width: 0;
-    background-color: var(--warna-basis2);
+    width: 0; /* Dimulai dari 0 untuk animasi */
+    background-color: var(--warna-merek); /* Menggunakan warna merek langsung untuk bar */
     border-radius: 5px;
-    transition: width 0.5s;
+    transition: width 0.5s; /* Transisi untuk perubahan lebar (opsional jika sudah ada animasi keyframes) */
 }
 
+/* Animasi Progress Bar untuk setiap Keahlian */
+/* HTML Skill Bar */
 .animasi_html .bar_kemajuan {
-    width: 100%;
-    background-color: var(--warna-merek);
-    border-radius: 5px;
     animation: fill_html 2s ease-in-out forwards;
 }
 
+/* CSS Skill Bar */
 .animasi_css .bar_kemajuan {
-    width: 100%;
-    background-color: var(--warna-merek);
-    border-radius: 5px;
     animation: fill_css 2s ease-in-out forwards;
 }
 
+/* JavaScript Skill Bar */
 .animasi_js .bar_kemajuan {
-    width: 100%;
-    background-color: var(--warna-merek);
-    border-radius: 5px;
     animation: fill_js 2s ease-in-out forwards;
 }
 
+/* Git Skill Bar */
 .animasi_git .bar_kemajuan {
-    width: 100%;
-    background-color: var(--warna-merek);
-    border-radius: 5px;
     animation: fill_git 2s ease-in-out forwards;
 }
 
+/* Bootstrap Skill Bar */
 .animasi_bootstrap .bar_kemajuan {
-    width: 100%;
-    background-color: var(--warna-merek);
-    border-radius: 5px;
     animation: fill_bootstrap 2s ease-in-out forwards;
 }
 
+/* Keyframes untuk Animasi Lebar Bar */
 @keyframes fill_html {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 90%;
-    }
+    0% { width: 0; }
+    100% { width: 90%; }
 }
 
 @keyframes fill_css {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 80%;
-    }
+    0% { width: 0; }
+    100% { width: 80%; }
 }
 
 @keyframes fill_js {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 70%;
-    }
+    0% { width: 0; }
+    100% { width: 70%; }
 }
 
 @keyframes fill_git {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 90%;
-    }
+    0% { width: 0; }
+    100% { width: 90%; }
 }
 
 @keyframes fill_bootstrap {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 90%;
-    }
+    0% { width: 0; }
+    100% { width: 90%; }
 }
 
-/* ====================KEAHLIAN DIAKHIRI==================== */
+/* ==================== KEAHLIAN (SKILLS) DIAKHIRI ==================== */
 
-/* ====================KONTAK DIMULAI==================== */
+
+/* ==================== KONTAK ==================== */
 #kontak .kontrol {
     background-color: var(--warna-basis);
     border-color: var(--warna-basis);
     color: var(--warna-utama);
+    padding: 10px 15px; /* Menambahkan padding untuk kontrol form */
 }
 
 #kontak .kontrol:focus {
     border-color: var(--warna-merek);
-    box-shadow: none;
+    box-shadow: 0 0 0 0.25rem rgba(167, 169, 190, 0.25); /* Menambahkan bayangan fokus Bootstrap */
 }
 
 #kontak .kontrol::placeholder {
     color: var(--warna-utama);
+    opacity: 0.7; /* Membuat placeholder sedikit transparan */
 }
 
 #kontak input.kontrol {
-    height: 44px;
+    height: 44px; /* Tinggi input field */
 }
+/* ==================== KONTAK DIAKHIRI ==================== */
 
-/* ====================KONTAK DIAKHIRI==================== */
 
-/* ====================IKON SOSIAL DIMULAI==================== */
+/* ==================== IKON SOSIAL (FOOTER) ==================== */
 .ikon_sosial a {
     width: 40px;
     height: 40px;
@@ -287,31 +279,42 @@ img {
     align-items: center;
     justify-content: center;
     background-color: var(--warna-basis);
-    border-radius: 100px;
+    border-radius: 50%; /* Membuat ikon lingkaran sempurna */
     font-size: 24px;
+    margin: 0 5px; /* Jarak antar ikon */
+    color: var(--warna-utama); /* Memastikan warna ikon terlihat */
 }
 
 .ikon_sosial a:hover {
-    background-color: var(--warna-basis2);
+    background-color: var(--warna-merek); /* Mengubah warna latar belakang saat hover */
+    color: var(--warna-basis2); /* Mengubah warna ikon saat hover */
 }
+/* ==================== IKON SOSIAL (FOOTER) DIAKHIRI ==================== */
 
-/* ====================IKON SOSIAL DIAKHIRI==================== */
 
+/* ==================== MEDIA QUERIES (RESPONSIVE) ==================== */
 @media (min-width: 992px) {
     .navigasi_bar {
         min-height: 100vh;
         width: var(--lebar-barsamping);
-        background: linear-gradient(rgb(31, 29, 48, .9), rgb(31, 29, 48, .8)), url(../images/bar_samping.png);
+        background: linear-gradient(rgba(31, 29, 48, 0.9), rgba(31, 29, 48, 0.8)), url(../images/bar_samping.png);
         background-size: cover;
-        background-position: 350px;
+        background-position: center center; /* Posisi gambar latar belakang */
+        background-repeat: no-repeat;
+        position: fixed; /* Menjadikan navbar tetap di posisi saat scrolling */
+        left: 0;
+        top: 0;
+        z-index: 1030; /* Menetapkan z-index agar navbar di atas konten lain */
     }
 
     .navigasi-bar_merek img {
         border: 8px solid var(--warna-merek);
+        margin-bottom: 20px; /* Tambahkan sedikit jarak di bawah gambar profil */
     }
 
-    /* PEMBUNGKUS KONTEN */
+    /* Pembungkus Konten - Mengimbangi lebar sidebar */
     #pembungkus_konten {
         padding-left: var(--lebar-barsamping);
     }
 }
+/* ==================== MEDIA QUERIES (RESPONSIVE) DIAKHIRI ==================== */
