@@ -66,7 +66,6 @@ img {
     justify-content: center;
     padding-top: 80px;
     padding-bottom: 80px;
-    /* Memberikan batas bawah antar section, tapi mungkin tidak perlu di section terakhir */
     border-bottom: 2px solid rgba(255, 255, 255, 0.1); 
 }
 
@@ -189,7 +188,7 @@ img {
     width: 0; /* Dimulai dari 0 untuk animasi */
     background-color: var(--warna-merek); /* Menggunakan warna merek langsung untuk bar */
     border-radius: 5px;
-    transition: width 0.5s; /* Transisi untuk perubahan lebar (opsional jika sudah ada animasi keyframes) */
+    /* transition: width 0.5s;  Hapus ini jika menggunakan animasi keyframes */
 }
 
 /* Animasi Progress Bar untuk setiap Keahlian */
@@ -208,15 +207,36 @@ img {
     animation: fill_js 2s ease-in-out forwards;
 }
 
-/* Git Skill Bar */
+/* PHP Skill Bar (Baru) */
+.animasi_php .bar_kemajuan {
+    animation: fill_php 2s ease-in-out forwards;
+}
+
+/* Vue.js Skill Bar (Baru) */
+.animasi_vuejs .bar_kemajuan {
+    animation: fill_vuejs 2s ease-in-out forwards;
+}
+
+/* Flutter Skill Bar (Baru) */
+.animasi_flutter .bar_kemajuan {
+    animation: fill_flutter 2s ease-in-out forwards;
+}
+
+/* Dart Skill Bar (Baru) */
+.animasi_dart .bar_kemajuan {
+    animation: fill_dart 2s ease-in-out forwards;
+}
+
+/* Git Skill Bar (Disesuaikan) */
 .animasi_git .bar_kemajuan {
     animation: fill_git 2s ease-in-out forwards;
 }
 
-/* Bootstrap Skill Bar */
+/* Bootstrap Skill Bar (Disesuaikan) */
 .animasi_bootstrap .bar_kemajuan {
     animation: fill_bootstrap 2s ease-in-out forwards;
 }
+
 
 /* Keyframes untuk Animasi Lebar Bar */
 @keyframes fill_html {
@@ -234,14 +254,40 @@ img {
     100% { width: 70%; }
 }
 
-@keyframes fill_git {
+/* Keyframes untuk PHP (Baru) */
+@keyframes fill_php {
     0% { width: 0; }
-    100% { width: 90%; }
+    100% { width: 40%; }
 }
 
+/* Keyframes untuk Vue.js (Baru) */
+@keyframes fill_vuejs {
+    0% { width: 0; }
+    100% { width: 45%; }
+}
+
+/* Keyframes untuk Flutter (Baru) */
+@keyframes fill_flutter {
+    0% { width: 0; }
+    100% { width: 60%; }
+}
+
+/* Keyframes untuk Dart (Baru) */
+@keyframes fill_dart {
+    0% { width: 0; }
+    100% { width: 65%; }
+}
+
+/* Keyframes untuk Git (Disesuaikan) */
+@keyframes fill_git {
+    0% { width: 0; }
+    100% { width: 50%; } /* Disesuaikan dari 90% */
+}
+
+/* Keyframes untuk Bootstrap (Disesuaikan) */
 @keyframes fill_bootstrap {
     0% { width: 0; }
-    100% { width: 90%; }
+    100% { width: 50%; } /* Disesuaikan dari 90% */
 }
 
 /* ==================== KEAHLIAN (SKILLS) DIAKHIRI ==================== */

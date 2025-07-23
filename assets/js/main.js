@@ -10,9 +10,9 @@ AOS.init({
 });
 
 let typed = new Typed(".teks_merek", {
-  strings: ["SEDANG MEMPELAJARI SASS", "WEB DEVELOPER PEMULA"],
-  typeSpeed: 60,
-  backSpeed: 60,
+  strings: ["SEDANG MEMPELAJARI Gin Gonic (Gin)", "WEB & MOBILE DEVELOPER PEMULA"],
+  typeSpeed: 40,
+  backSpeed: 30,
   backDelay: 1000,
   loop: true,
 });
